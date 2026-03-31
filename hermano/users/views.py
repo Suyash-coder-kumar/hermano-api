@@ -22,6 +22,7 @@ class UserSearchView(generics.ListAPIView):
 
     def get_queryset(self):
         query = self.request.query_params.get('q', '')
-        return User.objects.filter(Q(handel__icontains=query) | Q(email__icontains=query))
+        print(query)
+        return User.objects.filter(Q(handle__icontains=query) | Q(email__icontains=query))
 
 

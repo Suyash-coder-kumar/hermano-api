@@ -19,4 +19,4 @@ class RegisterSerializer(serializers.ModelSerializer):
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model=User
-        fields=['username','bio','email','dp','handel']
+        fields=['username','bio','email','dp','handle']
