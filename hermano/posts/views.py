@@ -6,7 +6,7 @@ from .serializers import PostSerializer
 
 class PostViewset(viewsets.ModelViewSet):
     queryset=Post.objects.all().order_by('-created_at')
-    serializer_class=PostSerializer()
+    serializer_class=PostSerializer
     permission_classes=[permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
