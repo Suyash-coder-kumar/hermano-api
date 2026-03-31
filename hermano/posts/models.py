@@ -6,4 +6,7 @@ class Post(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE,related_name="posts")
     media=models.FileField(upload_to='posts/')
     created_at=models.DateTimeField(auto_now=True)
-    caption=models.TextField()
+    caption=models.TextField(blank=True,null=True)
+
+    def __str__(self):
+        return f"Post by: {self.user.username}"
